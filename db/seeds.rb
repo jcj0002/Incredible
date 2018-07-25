@@ -5,20 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-
 User.destroy_all
 
 jane_smith = User.create!(
     email: 'jane.smith@happyplace.com',
-    password: 'janes',
-    password_confirmation: 'janes'
+    password: 'janesmith',
+    password_confirmation: 'janesmith'
 )
 
 john_smith = User.create!(
     email: 'john.smith@happyplace.com',
-    password: 'johns',
-    password_confirmation: 'johns'
+    password: 'johnsmith',
+    password_confirmation: 'johnsmith'
 )
 
 jane_smith.skills.create!(
@@ -29,6 +27,8 @@ jane_smith.skills.create!(
 
 john_smith.skills.create!(
     title: 'Real Estate',
-    description: 'Technical artist who use a camera to capture various subjects.',
+    description: 'Sales agent who rent, buy and sells homes to clients.',
     rating: 3
 )
+
+puts "Done Seeding!"

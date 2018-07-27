@@ -20,17 +20,22 @@ import Skill from './Skill';
                     {/* {this.props.skills.map(s =>s.description)} */}
                     {this.props.skills.map((s) => {
                         return (
+                            
                             <div>
-                                {s.title}
+                                
+                               <h2> {s.title} </h2>
                                 <br/>
                                 {s.description}
                                 <br/>
-                                <button>NEW SKILL</button>
+                                {s.rating}
+                                
+                                
+                                
                             </div>
-
+                            
                         )
                     })}
-                    
+                    <Link to='/skills/new'><button> NEW SKILL</button></Link>
                    
                 </div>
 

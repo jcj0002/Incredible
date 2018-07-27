@@ -6,6 +6,8 @@ import { Route, BrowserRouter as Router, Switch, Redirect, Link } from 'react-ro
 import { saveAuthTokens, userIsLoggedIn, setAxiosDefaults, clearAuthTokens } from './utils/SessionHeaderUtil'
 import axios from 'axios'
 import Navbar from './components/Navbar'
+import CreateSkill from './components/CreateSkill';
+
 
 
 
@@ -99,8 +101,9 @@ class App extends Component {
 
     const HomeComponent = () => {
       return <Home
-      skills = {this.state.skills} />
+        skills={this.state.skills} />
     }
+
 
 
 
@@ -108,13 +111,14 @@ class App extends Component {
     return (
       <Router>
         <div>
-        
-          <Navbar signOut ={this.signOut} /> 
+
+          <Navbar signOut={this.signOut} />
 
           <Switch>
-            <Route exact path='/signUp' render={SignUpLogInComponent} />
+            <Route exact path='/signup' render={SignUpLogInComponent} />
             <Route exact path='/skills' render={UserSkillsComponent} />
             <Route exact path='/home' render={HomeComponent} />
+            <Route exact path='/skills/new' component={CreateSkill} />
 
           </Switch>
 

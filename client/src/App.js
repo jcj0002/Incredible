@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import SignUpLogIn from './components/SignUpLogIn'
-import UserSkills from './components/UserSkills'
+import axios from 'axios'
 import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom'
 import { saveAuthTokens, userIsLoggedIn, setAxiosDefaults, clearAuthTokens } from './utils/SessionHeaderUtil'
-import axios from 'axios'
-
+import UserSkills from './components/UserSkills'
 
 class App extends Component {
 
@@ -22,13 +21,13 @@ class App extends Component {
       skills = await this.fetchSkills()
     }
     this.setState({ skills, signedIn })
-
+ 
   }
   fetchSkills = async () => {
     const response = await axios.get('/skills')
     return response.data
   }
-
+  
 
 
   signUp = async (email, password, password_confirmation) => {

@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import SignUpLogIn from './components/SignUpLogIn'
-import axios from 'axios'
-import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom'
-import { saveAuthTokens, userIsLoggedIn, setAxiosDefaults, clearAuthTokens } from './utils/SessionHeaderUtil'
 import UserSkills from './components/UserSkills'
+import Home from './components/Home'
+import { Route, BrowserRouter as Router, Switch, Redirect,Link } from 'react-router-dom'
+import { saveAuthTokens, userIsLoggedIn, setAxiosDefaults, clearAuthTokens } from './utils/SessionHeaderUtil'
+import axios from 'axios'
+
+
 
 class App extends Component {
 
@@ -21,13 +24,13 @@ class App extends Component {
       skills = await this.fetchSkills()
     }
     this.setState({ skills, signedIn })
- 
+
   }
   fetchSkills = async () => {
     const response = await axios.get('/skills')
     return response.data
   }
-  
+
 
 
   signUp = async (email, password, password_confirmation) => {
@@ -93,6 +96,9 @@ class App extends Component {
         deleteSkill={this.deletePost} />
     }
 
+  
+   
+
     return (
       <Router>
         <div>
@@ -100,11 +106,13 @@ class App extends Component {
           <Switch>
             <Route exact path='/signUp' render={SignUpLogInComponent} />
             <Route exact path='/skills' render={UserSkillsComponent} />
+            <Route exact path='/home' component={Home} />
           </Switch>
 
           {
             this.state.signedIn ?
-              <Redirect to="/skills" /> :
+            //    null :
+              <Redirect to="/home" /> :
               <Redirect to="/signUp" />
 
           }

@@ -24,7 +24,10 @@ import Skill from './Skill';
                                 {s.title}
                                 <br/>
                                 {s.description}
+                                <br/>
+                                <button>NEW SKILL</button>
                             </div>
+
                         )
                     })}
                     

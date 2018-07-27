@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import SignUpLogIn from './components/SignUpLogIn'
 import UserSkills from './components/UserSkills'
 import Home from './components/Home'
-import { Route, BrowserRouter as Router, Switch, Redirect,Link } from 'react-router-dom'
+import { Route, BrowserRouter as Router, Switch, Redirect, Link } from 'react-router-dom'
 import { saveAuthTokens, userIsLoggedIn, setAxiosDefaults, clearAuthTokens } from './utils/SessionHeaderUtil'
 import axios from 'axios'
+import Navbar from './components/Navbar'
 
 
 
@@ -96,22 +97,30 @@ class App extends Component {
         deleteSkill={this.deletePost} />
     }
 
-  
-   
+    const HomeComponent = () => {
+      return <Home
+      skills = {this.state.skills} />
+    }
+
+
+
 
     return (
       <Router>
         <div>
-          <button onClick={this.signOut}>Sign Out</button>
+        
+          <Navbar signOut ={this.signOut} /> 
+
           <Switch>
             <Route exact path='/signUp' render={SignUpLogInComponent} />
             <Route exact path='/skills' render={UserSkillsComponent} />
-            <Route exact path='/home' component={Home} />
+            <Route exact path='/home' render={HomeComponent} />
+
           </Switch>
 
           {
             this.state.signedIn ?
-            //    null :
+              //    null :
               <Redirect to="/home" /> :
               <Redirect to="/signUp" />
 

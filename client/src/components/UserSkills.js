@@ -1,6 +1,7 @@
 import React from 'react'
 import Skill from "./Skill"
 
+
 const UserSkills = (props) => {
 
   const skills = props.skills.map((skill) => {

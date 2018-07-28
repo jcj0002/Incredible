@@ -1,5 +1,6 @@
 DeviseTokenAuth.setup do |config|
     config.change_headers_on_each_request = false
+    
 end
 
   # By default the authorization headers will change after each request. The

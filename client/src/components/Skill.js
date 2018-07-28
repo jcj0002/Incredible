@@ -7,6 +7,7 @@ const Skill = (props) => {
             <div>{props.description}</div>
             <br/>
             <div>{props.rating}</div>
+            <button>delete</button>
             
         </div>
 

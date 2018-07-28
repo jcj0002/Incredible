@@ -23,7 +23,11 @@ class SignUpLogIn extends Component {
         this.props.signIn(
             this.state.email,
             this.state.password
-        )
+        ).then(()=>{
+            return(
+                this.props.history.push(`/home`)
+            )
+        })
     }
 
     handleChange = (event) => {
@@ -51,6 +55,7 @@ class SignUpLogIn extends Component {
                     </div>
 
                     <button onClick={this.signUp}>Sign Up</button>
+                   
                     <button onClick={this.signIn}>Log In</button>
                 </form>
             </div>

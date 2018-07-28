@@ -79,60 +79,65 @@ class App extends Component {
     clearAuthTokens()
 
     this.setState({ signedIn: false })
+
   }
-  deleteSkills = async (id) => {
-    await axios.delete(`/posts/${id}`)
+
+
+  deleteSkill = async (id) => {
+    await axios.delete(`/skills/${id}`)
     const skills = await this.fetchSkills()
     this.setState({ skills })
+    
+  }
+   
+
+
+render() {
+
+  const SignUpLogInComponent = (props) => (
+    <SignUpLogIn
+      {...props}
+      signUp={this.signUp}
+      signIn={this.signIn} />
+  )
+  const UserSkillsComponent = () => {
+    return <UserSkills
+      skills={this.state.skills}
+      deleteSkill={this.deletePost} />
   }
 
-  render() {
-
-    const SignUpLogInComponent = () => (
-      <SignUpLogIn
-        signUp={this.signUp}
-        signIn={this.signIn} />
-    )
-    const UserSkillsComponent = () => {
-      return <UserSkills
-        skills={this.state.skills}
-        deleteSkill={this.deletePost} />
-    }
-
-    const HomeComponent = () => {
-      return <Home
-        skills={this.state.skills} />
-    }
+  const HomeComponent = () => {
+    return <Home
+      skills={this.state.skills} />
+  }
 
 
 
 
 
-    return (
-      <Router>
-        <div>
+  return (
+    <Router>
+      <div>
 
-          <Navbar signOut={this.signOut} />
+        <Navbar signOut={this.signOut} />
 
-          <Switch>
-            <Route exact path='/signup' render={SignUpLogInComponent} />
-            <Route exact path='/skills' render={UserSkillsComponent} />
-            <Route exact path='/home' render={HomeComponent} />
-            <Route exact path='/skills/new' component={CreateSkill} />
+        <Switch>
+          <Route exact path='/signup' render={SignUpLogInComponent} />
+          <Route exact path='/skills' render={UserSkillsComponent} />
+          <Route exact path='/home' render={HomeComponent} />
+          <Route exact path='/skills/new' component={CreateSkill} />
 
-          </Switch>
-
-          {
+        </Switch>
+        {
             this.state.signedIn ?
-              //    null :
-              <Redirect to="/home" /> :
-              <Redirect to="/signUp" />
+              null : null
+              
+        }
 
-          }
-        </div>
-      </Router>
-    )
-  }
+      </div>
+    </Router>
+  )
+}
 }
 
 export default App

@@ -1,4 +1,10 @@
-import React from 'react';
+import React from 'react'
+import axios from 'axios'
+
+
+
+
+
 
 const Skill = (props) => {
     return (
@@ -7,7 +13,7 @@ const Skill = (props) => {
             <div>{props.description}</div>
             <br/>
             <div>{props.rating}</div>
-            <button>delete</button>
+            <button onClick={()=> props.deleteSkill(props.id)}>DELETE SKILL</button>
             
         </div>
 

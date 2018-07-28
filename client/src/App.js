@@ -102,8 +102,9 @@ render() {
   )
   const UserSkillsComponent = () => {
     return <UserSkills
+   
       skills={this.state.skills}
-      deleteSkill={this.deletePost} />
+      deleteSkill={this.deleteSkill} />
   }
 
   const HomeComponent = () => {

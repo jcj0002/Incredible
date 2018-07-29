@@ -14,6 +14,7 @@ const Skill = (props) => {
             <br/>
             <div>{props.rating}</div>
             <button onClick={()=> props.deleteSkill(props.id)}>DELETE SKILL</button>
+            <button onClick={()=> props.updateSkill(props.id)}>EDIT</button>
             
         </div>
 

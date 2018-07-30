@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_25_195604) do
+ActiveRecord::Schema.define(version: 2018_07_30_015200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "name"
+    t.string "title"
+    t.date "date"
+    t.string "description"
+    t.string "skill_rating"
+    t.bigint "skills_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["skills_id"], name: "index_reviews_on_skills_id"
+  end
 
   create_table "skills", force: :cascade do |t|
     t.string "title"
@@ -55,5 +67,6 @@ ActiveRecord::Schema.define(version: 2018_07_25_195604) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "reviews", "skills", column: "skills_id"
   add_foreign_key "skills", "users"
 end

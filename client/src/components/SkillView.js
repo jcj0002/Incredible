@@ -41,4 +41,4 @@ class SkillView extends Component {
     }
 }
 
-export default SkillView;
+export default SkillView

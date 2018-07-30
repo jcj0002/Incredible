@@ -8,7 +8,8 @@ import axios from 'axios'
 import Navbar from './components/Navbar'
 import CreateSkill from './components/CreateSkill';
 import EditSkill from './components/EditSkill';
-import Skill from './components/Skill';
+import SkillView from './components/SkillView';
+
 
 
 
@@ -142,7 +143,7 @@ render() {
           <Route exact path='/skills' render={UserSkillsComponent} />
           <Route exact path='/home' render={HomeComponent} />
           <Route exact path='/skills/new' component={CreateSkill} />
-          <Route exact path='/skills/:id' component={Skill} />
+          <Route exact path='/skills/:id' component={SkillView} />
           <Route exact path='/skills/:skillId/edit' component={EditSkill} />
           
           

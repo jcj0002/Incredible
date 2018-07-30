@@ -10,6 +10,7 @@ const UserSkills = (props) => {
         {...skill}
         deleteSkill={props.deleteSkill}
         key={skill.id} />
+      
     )
   })
 

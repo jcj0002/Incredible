@@ -1,5 +1,5 @@
 import React from 'react'
-import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 
 
@@ -14,8 +14,10 @@ const Skill = (props) => {
             <br/>
             <div>{props.rating}</div>
             <button onClick={()=> props.deleteSkill(props.id)}>DELETE SKILL</button>
-            <button onClick={()=> props.updateSkill(props.id)}>EDIT</button>
-            
+            <button onClick={()=> props.skillId(props.id)}>View SKILL</button>
+            <Link to= "/skills/:id"><button>VIEW</button></Link>
+            {/* <Link to={`/skills/${skill.id}`}><button>VIEW</button></Link> */}
+        
         </div>
 
     )

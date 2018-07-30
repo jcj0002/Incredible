@@ -7,7 +7,8 @@ import { saveAuthTokens, userIsLoggedIn, setAxiosDefaults, clearAuthTokens } fro
 import axios from 'axios'
 import Navbar from './components/Navbar'
 import CreateSkill from './components/CreateSkill';
-
+import EditSkill from './components/EditSkill';
+import Skill from './components/Skill';
 
 
 
@@ -29,11 +30,15 @@ class App extends Component {
     this.setState({ skills, signedIn })
 
   }
+  // fetchSkill = async () => {
+  //   const response = await axios.get('/skills/:id')
+  //   return response.data
+  // }
+
   fetchSkills = async () => {
     const response = await axios.get('/skills')
     return response.data
   }
-
 
 
   signUp = async (email, password, password_confirmation) => {
@@ -89,6 +94,10 @@ class App extends Component {
     this.setState({ skills })
     
   }
+  
+  
+
+      
    
 
 
@@ -104,13 +113,19 @@ render() {
     return <UserSkills
    
       skills={this.state.skills}
-      deleteSkill={this.deleteSkill} />
+      skill = {this.state.skill}
+      deleteSkill={this.deleteSkill}
+      />
+     
   }
 
   const HomeComponent = () => {
     return <Home
       skills={this.state.skills} />
   }
+
+  
+  
 
 
 
@@ -127,6 +142,11 @@ render() {
           <Route exact path='/skills' render={UserSkillsComponent} />
           <Route exact path='/home' render={HomeComponent} />
           <Route exact path='/skills/new' component={CreateSkill} />
+          <Route exact path='/skills/:id' component={Skill} />
+          <Route exact path='/skills/:skillId/edit' component={EditSkill} />
+          
+          
+          
 
         </Switch>
         {

@@ -5,15 +5,15 @@
 ### How it works: Signup or login and proceed to the  home page where you'll see a current list of your skills. Haven't added any skills to your list? That's okay, select new skill and create your skill so people can start reviewing you. 
 
 ## BACKGROUND
-### I've traveled so many times with large groups of people and it became quite hectic to get details and information about the trips out to everyone. This app is intended to fix the issue of having to do that, sharing a link could fix all the problems that existed before.
+### Being a person with many talents has it's benefits, you get to become a entreprenuer and create your own version of success. However, it isn't always great if you don't have the clients and no one knows about your talents. This site presents an easy way for entrepreneurs to gain new clients. On the flipside,  clients don't have to search far for talented people. The only task is to look for innncredible people, they really do exist.
 
 ## TECHNOLOGIES
 ### MDN and W3Schools were referenced for this project. 
 * React
-* Nodemon
-* Express
-* Mongo
-* Mongoose
+* Ruby
+* Rails
+* PostgreSQL
+
 
 ## WIREFRAMES
 ![alt text](https://i.imgur.com/05iO1EY.jpg)

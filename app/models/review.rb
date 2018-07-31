@@ -1,3 +1,3 @@
 class Review < ApplicationRecord
-  belongs_to :skills
+  belongs_to :skill
 end

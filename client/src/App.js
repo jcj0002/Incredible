@@ -9,6 +9,9 @@ import Navbar from './components/Navbar'
 import CreateSkill from './components/CreateSkill';
 import EditSkill from './components/EditSkill';
 import SkillView from './components/SkillView';
+import SkillReviews from './components/SkillReviews';
+
+
 
 
 class App extends Component {
@@ -103,9 +106,9 @@ class App extends Component {
       />
     }
 
-      const HomeComponent = () => {
+      const HomeComponent = (props) => {
       return <Home
-        skills={this.state.skills} />
+        skills={this.state.skills} {...props}/>
     }
 
     return (
@@ -121,6 +124,8 @@ class App extends Component {
             <Route exact path='/skills/new' component={CreateSkill} />
             <Route exact path='/skills/:id' component={SkillView} />
             <Route exact path='/skills/:id/edit' component ={EditSkill} />
+            <Route exact path='/skills/:id/reviews' render ={SkillReviews} />
+            
           </Switch>
 
           {

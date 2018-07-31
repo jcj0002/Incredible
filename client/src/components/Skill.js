@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import { Container } from 'semantic-ui-react'
 
 
 
@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 const Skill = (props) => {
     return (
-        <div>
+        <Container>
             <div><h1>{props.title}</h1></div>
             <div>{props.description}</div>
             <br />
@@ -17,7 +17,7 @@ const Skill = (props) => {
             <Link to={`/skills/${props.id}`}><button>VIEW</button></Link>
 
 
-        </div>
+        </Container>
 
     )
 }

@@ -1,9 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!
   
-  
-  
-  
   def index
     @skill = Skill.find(params[:skill_id])
     @reviews = @skill.reviews.all

@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { Button, Checkbox, Form } from 'semantic-ui-react'
+import styled from 'styled-components'
+
+
+const NewSkillWrapper = styled.div`
+width: 40vw;
+height: 40vh;
+margin-top: 20vh;
+margin-left: 30vw;
+
+`
+
 class CreateSkill extends Component {
+
     state = {
         title: '',
         description: '',
@@ -30,8 +43,8 @@ class CreateSkill extends Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
+            <NewSkillWrapper>
+                <Form onSubmit={this.handleSubmit}>
                     <h1>Create New Post</h1>
                     <input
                         placeholder="Title"
@@ -59,9 +72,9 @@ class CreateSkill extends Component {
                     />
                     <br />
                     <br />
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
+                    <Button type="submit">Submit</Button>
+                </Form>
+            </NewSkillWrapper>
         )
     }
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import Skill from "./Skill"
-
+import styled from 'styled-components'
 
 const UserSkills = (props) => {
 

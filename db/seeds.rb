@@ -19,33 +19,33 @@ john_smith = User.create!(
     password_confirmation: 'johnsmith'
 )
 
-jane_smith.skills.create!(
+photo = jane_smith.skills.create!(
     title: 'Photographer',
     description: 'Technical artist who use a camera to capture various subjects.',
     rating: 5
 )
 
-john_smith.skills.create!(
+estate = john_smith.skills.create!(
     title: 'Real Estate',
     description: 'Sales agent who rent, buy and sells homes to clients.',
     rating: 3
 )
 
-jane_smith.skills.reviews.create!(
+photo.reviews.create!(
     name:'Janey Johnson',
     title:'Best Photographer',
     date:'01-08-2018',
     description: 'Jane is the best Photographer I know. She rocks!',
     skill_rating: 5
     )
-jane_smith.skills.reviews.create!(
+photo.reviews.create!(
     name:'Stacy Johnson',
     title:'Superb Photographer',
     date:'01-08-2017',
     description: 'Jane is so awesome. She paid attention to every little detail. She is so cool!',
     skill_rating: 5
     )
-john_smith.skills.reviews.create!(
+estate.reviews.create!(
     name:'James Williams',
     title:'Awesome Real Estate Agent',
     date:'01-08-2018',
@@ -53,7 +53,7 @@ john_smith.skills.reviews.create!(
     skill_rating: 5
 )
 
-john_smith.skills.reviews.create!(
+estate.reviews.create!(
     name:'Micheal Johnson',
     title:'Best Real Estate Agent',
     date:'01-08-2018',

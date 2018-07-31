@@ -36,7 +36,7 @@ class EditSkill extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <h1>Create New Post</h1>
+                    <h1>Edit Post</h1>
                     <input
                         placeholder="Title"
                         type="text"

@@ -6,7 +6,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.date :date
       t.string :description
       t.string :skill_rating
-      t.references :skills, foreign_key: true
+      t.references :skill, foreign_key: true
 
       t.timestamps
     end

@@ -1,9 +1,12 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!
   
+  
+  
   def index
-    @reviews = skills.reviews
-    render json:@reviews
+    @skill = Skill.find(params[:skill_id])
+    @reviews = @skill.reviews.all
+    render json: @reviews 
   end
 
   def show

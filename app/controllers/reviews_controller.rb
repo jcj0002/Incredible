@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
   
   
   
+  
   def index
     @skill = Skill.find(params[:skill_id])
     @reviews = @skill.reviews.all

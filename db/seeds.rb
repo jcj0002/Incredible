@@ -31,4 +31,34 @@ john_smith.skills.create!(
     rating: 3
 )
 
+jane_smith.skills.reviews.create!(
+    name:'Janey Johnson',
+    title:'Best Photographer',
+    date:'01-08-2018',
+    description: 'Jane is the best Photographer I know. She rocks!',
+    skill_rating: 5
+    )
+jane_smith.skills.reviews.create!(
+    name:'Stacy Johnson',
+    title:'Superb Photographer',
+    date:'01-08-2017',
+    description: 'Jane is so awesome. She paid attention to every little detail. She is so cool!',
+    skill_rating: 5
+    )
+john_smith.skills.reviews.create!(
+    name:'James Williams',
+    title:'Awesome Real Estate Agent',
+    date:'01-08-2018',
+    description: 'James is the best Real Estate Agent I know. He is perfect for the job!',
+    skill_rating: 5
+)
+
+john_smith.skills.reviews.create!(
+    name:'Micheal Johnson',
+    title:'Best Real Estate Agent',
+    date:'01-08-2018',
+    description: 'James is the sold me my first home. He is the great.',
+    skill_rating: 4
+)
+
 puts "Done Seeding!"

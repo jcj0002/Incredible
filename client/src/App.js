@@ -103,7 +103,7 @@ class App extends Component {
       />
     }
 
-    const HomeComponent = () => {
+      const HomeComponent = () => {
       return <Home
         skills={this.state.skills} />
     }
@@ -120,7 +120,7 @@ class App extends Component {
             <Route exact path='/home' render={HomeComponent} />
             <Route exact path='/skills/new' component={CreateSkill} />
             <Route exact path='/skills/:id' component={SkillView} />
-            <Route exact path='/skills/:id/edit' component={EditSkill} />
+            <Route exact path='/skills/:id/edit' component ={EditSkill} />
           </Switch>
 
           {

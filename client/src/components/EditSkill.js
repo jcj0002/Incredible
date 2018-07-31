@@ -17,20 +17,22 @@ class EditSkill extends Component {
     }
     handleSubmit = (event) => {
         event.preventDefault()
-        const skillId = this.props.match.params.skill_id
-        const payload = {...this.state}
-        payload.skill_id = skillId
-        payload.skillId = this.props.skill.id
+        const skillId = this.props.match.params.id
+        const payload = { ...this.state }
+        // payload.skill_id = skillId
+        // payload.skillId = this.props.skill.id
         axios.put(`/skills/${skillId}`, payload)
-        .then(res=> {
-            this.props.history.push(`/skills/${skillId}`)
-        })
+            .then((res) => {
+                //set state to stop update on refresh
+                this.props.history.push(`/skills`)
+            })
         console.error('error')
-        
-            
+
+
     }
 
     render() {
+
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
@@ -52,7 +54,7 @@ class EditSkill extends Component {
                     />
                     <br />
                     <br />
-                    <input 
+                    <input
                         placeholder="Rating"
                         type="text"
                         name="rating"

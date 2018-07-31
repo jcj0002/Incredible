@@ -25,7 +25,7 @@ class SkillView extends Component {
     }
 
     render() {
-        console.log(this.props)
+        console.log(this.state)
 
         return (
             <div>
@@ -35,7 +35,7 @@ class SkillView extends Component {
                 <br />
                 <div>{this.state.skill.rating}</div>
                 <br/>
-                <Link to={`/skills/${this.props.id}/edit`}><button>EDIT SKILL</button></Link>
+                <Link to={`/skills/${this.state.skill.id}/edit`}><button>EDIT SKILL</button></Link>
             </div>
         );
     }

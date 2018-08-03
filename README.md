@@ -32,4 +32,4 @@
 
 ## SITE
 
-* innncredible.herokuapp.com/signUp
+* https://innncredible.herokuapp.com/signUp

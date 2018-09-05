@@ -4,22 +4,55 @@ import { Button, Checkbox, Form } from 'semantic-ui-react'
 
 
 const SignUpLogInWrapper = styled.div`
-width: 40vw;
-height: 40vh;
-/* display:flex;
+width: 45vw;
+height: 65vh;
+display:flex;
+flex-direction: column;
 justify-content: center;
-align-items: space-around; */
+/* align-items: center; */
 margin-top: 20vh;
 margin-left: 30vw;
+/* border: solid red; */
+
+
+.ui.form input{
+    background: #d6d6d6;
+}
+
+
+form{
+
+
+width: 50vw;
+height: 30vh;
+background: white;
+border-radius: 25px;
+padding: 30px;
+
+}
+
+
+
+
 
 h1{
     color:white;
-    font-size: 250px;
+    font-size: 450px;
+    display:flex;
+    justify-content: center;
     font-family: 'Clicker Script', cursive;
-    text-shadow: 4px 4px maroon;
-    text-align:center;
+    text-shadow: 6px 6px maroon;
+    margin-left: 4px;
     
     
+}
+
+h2{
+    color: white;
+}
+
+
+
 }
 
 
@@ -63,10 +96,10 @@ class SignUpLogIn extends Component {
 
     render() {
         return (
-            
+
             <SignUpLogInWrapper>
                 <h1>Innncredible</h1>
-                <br/>
+                <br />
                 <h2>New User? Sign up.</h2>
                 <h2>Returning User? Sign in.</h2>
                 <Form>
@@ -88,9 +121,9 @@ class SignUpLogIn extends Component {
 
                     <Button onClick={this.signIn}>Log In</Button>
                 </Form>
-             
+
             </SignUpLogInWrapper>
-            
+
         )
     }
 }

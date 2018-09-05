@@ -10,7 +10,7 @@ import styled from 'styled-components'
 const HomeWrapper = styled.div`
 border: solid red 1px;
 background: white;
-height: 55vh;
+height: 35vh;
 
 `
 const WelcomeWrapper = styled.div`
